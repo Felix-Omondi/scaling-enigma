@@ -15,7 +15,7 @@ public class Employee
     public required string Designation { get; set; }
     public required string Role { get; set; }
     public required string WorkShift { get; set; }
-    public DateOnly DateJoined { get; set; }
+    // public DateOnly DateJoined { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
 }
