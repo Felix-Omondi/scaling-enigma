@@ -1,0 +1,46 @@
+# Build artifacts & compiled outputs
+**/bin/
+**/obj/
+**/out/
+**/publish/
+
+# IDE & Editor settings
+**/.vs/
+**/.vscode/
+**/.idea/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# Version control
+**/.git/
+**/.gitignore
+**/.gitattributes
+**/.github/
+
+# Docker & CI/CD files
+**/Dockerfile*
+**/.dockerignore
+**/docker-compose*
+
+# Secrets & local configuration
+**/.env*
+**/*.pfx
+**/*.key
+**/*.pem
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+# Logs, caches & temporary files
+**/*.log
+**/logs/
+**/.DS_Store
+**/Thumbs.db
+**/TestResults/
+**/coverage/
+
+# Documentation & frontend assets (if applicable)
+**/*.md
+**/LICENSE
+**/node_modules/
