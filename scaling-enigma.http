@@ -1,0 +1,11 @@
+@scaling_enigma_HostAddress = http://localhost:5288
+
+GET {{scaling_enigma_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{scaling_enigma_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
