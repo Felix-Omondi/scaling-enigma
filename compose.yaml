@@ -2,7 +2,7 @@ services:
   api:
     build: .
     image: scaling-enigma
-    container_name: the-enigma
+    container_name: enigma-api
     expose:
       - "8080"
     environment:
