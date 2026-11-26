@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace scaling_enigma.Migrations;
 
 /// <inheritdoc />
-public partial class _20261125121751_InitialCreate : Migration
+public partial class _20261126053906_InitialCreate : Migration
 {
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,15 +18,15 @@ public partial class _20261125121751_InitialCreate : Migration
             {
                 Id = table.Column<int>(type: "integer", nullable: false)
                     .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                Department = table.Column<string>(type: "text", nullable: false),
-                Team = table.Column<string>(type: "text", nullable: false),
+                Department = table.Column<int>(type: "integer", nullable: false),
+                Team = table.Column<int>(type: "integer", nullable: false),
                 FirstName = table.Column<string>(type: "text", nullable: false),
                 LastName = table.Column<string>(type: "text", nullable: false),
                 OtherName = table.Column<string>(type: "text", nullable: true),
                 Email = table.Column<string>(type: "text", nullable: false),
-                Designation = table.Column<string>(type: "text", nullable: false),
-                Role = table.Column<string>(type: "text", nullable: false),
-                WorkShift = table.Column<string>(type: "text", nullable: false),
+                Designation = table.Column<int>(type: "integer", nullable: false),
+                Role = table.Column<int>(type: "integer", nullable: false),
+                WorkShift = table.Column<int>(type: "integer", nullable: false),
                 CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                 UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
             },

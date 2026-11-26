@@ -12,8 +12,8 @@ using scaling_enigma.Data;
 namespace scaling_enigma.Migrations;
 
 [DbContext(typeof(EmployeeDbContext))]
-[Migration("20261125121751_InitialCreate")]
-partial class _20261125121751_InitialCreate
+[Migration("20261126053906_InitialCreate")]
+partial class _20261126053906_InitialCreate
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,13 +36,11 @@ partial class _20261125121751_InitialCreate
                 b.Property<DateTime>("CreatedAt")
                     .HasColumnType("timestamp with time zone");
 
-                b.Property<string>("Department")
-                    .IsRequired()
-                    .HasColumnType("text");
+                b.Property<int>("Department")
+                    .HasColumnType("integer");
 
-                b.Property<string>("Designation")
-                    .IsRequired()
-                    .HasColumnType("text");
+                b.Property<int>("Designation")
+                    .HasColumnType("integer");
 
                 b.Property<string>("Email")
                     .IsRequired()
@@ -59,20 +57,17 @@ partial class _20261125121751_InitialCreate
                 b.Property<string>("OtherName")
                     .HasColumnType("text");
 
-                b.Property<string>("Role")
-                    .IsRequired()
-                    .HasColumnType("text");
+                b.Property<int>("Role")
+                    .HasColumnType("integer");
 
-                b.Property<string>("Team")
-                    .IsRequired()
-                    .HasColumnType("text");
+                b.Property<int>("Team")
+                    .HasColumnType("integer");
 
                 b.Property<DateTime?>("UpdatedAt")
                     .HasColumnType("timestamp with time zone");
 
-                b.Property<string>("WorkShift")
-                    .IsRequired()
-                    .HasColumnType("text");
+                b.Property<int>("WorkShift")
+                    .HasColumnType("integer");
 
                 b.HasKey("Id");
 
