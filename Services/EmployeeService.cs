@@ -71,15 +71,12 @@ public class EmployeeService : IEmployeeService
 
     private static Employee UpdateIfRequested(Employee employee, UpdateEmployeeDto request)
     {
-        if (!string.IsNullOrWhiteSpace(request.Department))
-        {
-            employee.Department = request.Department;
-        }
 
-        if (!string.IsNullOrWhiteSpace(request.Team))
-        {
-            employee.Team = request.Team;
-        }
+        employee.Department = request.Department ?? employee.Department;
+        employee.Team = request.Team ?? employee.Team;
+        employee.Designation = request.Designation ?? employee.Designation;
+        employee.Role = request.Role ?? employee.Role;
+        employee.WorkShift = request.WorkShift ?? employee.WorkShift;
 
         if (!string.IsNullOrWhiteSpace(request.FirstName))
         {
@@ -99,21 +96,6 @@ public class EmployeeService : IEmployeeService
         if (!string.IsNullOrWhiteSpace(request.Email))
         {
             employee.Email = request.Email;
-        }
-
-        if (!string.IsNullOrWhiteSpace(request.Designation))
-        {
-            employee.Designation = request.Designation;
-        }
-
-        if (!string.IsNullOrWhiteSpace(request.Role))
-        {
-            employee.Role = request.Role;
-        }
-
-        if (!string.IsNullOrWhiteSpace(request.WorkShift))
-        {
-            employee.WorkShift = request.WorkShift;
         }
 
         return employee;
