@@ -3,6 +3,7 @@ using scaling_enigma.Data;
 using scaling_enigma.Interfaces;
 using scaling_enigma.Models.Dtos;
 using scaling_enigma.Models.Entities;
+using scaling_enigma.Models.Enums;
 
 namespace scaling_enigma.Services;
 
@@ -99,5 +100,35 @@ public class EmployeeService : IEmployeeService
         }
 
         return employee;
+    }
+
+    public async Task<List<Employee>> GetEmployeesByShift(WorkShift shift)
+    {
+        var shiftEmployees = await _context.Employees.Where(e => e.WorkShift == shift).ToListAsync();
+        return shiftEmployees;
+    }
+
+    public async Task<List<Employee>> GetEmployeesByDepartment(Department department)
+    {
+        var departmentEmployees = await _context.Employees.Where(e => e.Department == department).ToListAsync();
+        return departmentEmployees;
+    }
+
+    public async Task<List<Employee>> GetEmployeesByTeam(Team team)
+    {
+        var teamEmployees = await _context.Employees.Where(e => e.Team == team).ToListAsync();
+        return teamEmployees;
+    }
+
+    public async Task<List<Employee>> GetEmployeesByDesignation(Designation designation)
+    {
+        var designationEmployees = await _context.Employees.Where(e => e.Designation == designation).ToListAsync();
+        return designationEmployees;
+    }
+
+    public async Task<List<Employee>> GetEmployeesByRole(Role role)
+    {
+        var roleEmployees = await _context.Employees.Where(e => e.Role == role).ToListAsync();
+        return roleEmployees;
     }
 }
