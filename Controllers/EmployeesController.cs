@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using scaling_enigma.Interfaces;
 using scaling_enigma.Models.Dtos;
 using scaling_enigma.Models.Entities;
+using scaling_enigma.Models.Enums;
 
 namespace scaling_enigma.Controllers
 {
@@ -75,6 +76,42 @@ namespace scaling_enigma.Controllers
                 return StatusCode(500);
             }
 
+        }
+
+        [HttpGet("/by-role")]
+        public async Task<ActionResult<List<Employee>>> GetEmployeesByRole(Role role)
+        {
+            var employees = await _service.GetEmployeesByRole(role);
+            return Ok(employees);
+        }
+
+        [HttpGet("/by-department")]
+        public async Task<ActionResult<List<Employee>>> GetEmployeesByDepartment(Department department)
+        {
+            var employees = await _service.GetEmployeesByDepartment(department);
+            return Ok(employees);
+        }
+
+        [HttpGet("/by-team")]
+        public async Task<ActionResult<List<Employee>>> GetEmployeesByTeam(Team team)
+        {
+            var employees = await _service.GetEmployeesByTeam(team);
+            return Ok(employees);
+        }
+
+
+        [HttpGet("/by-shift")]
+        public async Task<ActionResult<List<Employee>>> GetEmployeesByShift(WorkShift workShift)
+        {
+            var employees = await _service.GetEmployeesByShift(workShift);
+            return Ok(employees);
+        }
+
+        [HttpGet("/by-designation")]
+        public async Task<ActionResult<List<Employee>>> GetEmployeesByDesignation(Designation designation)
+        {
+            var employees = await _service.GetEmployeesByDesignation(designation);
+            return Ok(employees);
         }
     }
 }
