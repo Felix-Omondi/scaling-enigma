@@ -16,7 +16,7 @@ partial class EmployeeDbContextModelSnapshot : ModelSnapshot
     // If you encounter a merge conflict in the line below, it means you need to
     // discard one of the migration branches and recreate its migrations on top of
     // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20261126053906_InitialCreate";
+    public override string LastMigrationId => "20261126054955_StoreEnumAsStrings";
 
     protected override void BuildModel(ModelBuilder modelBuilder)
     {
@@ -38,11 +38,13 @@ partial class EmployeeDbContextModelSnapshot : ModelSnapshot
                 b.Property<DateTime>("CreatedAt")
                     .HasColumnType("timestamp with time zone");
 
-                b.Property<int>("Department")
-                    .HasColumnType("integer");
+                b.Property<string>("Department")
+                    .IsRequired()
+                    .HasColumnType("text");
 
-                b.Property<int>("Designation")
-                    .HasColumnType("integer");
+                b.Property<string>("Designation")
+                    .IsRequired()
+                    .HasColumnType("text");
 
                 b.Property<string>("Email")
                     .IsRequired()
@@ -59,17 +61,20 @@ partial class EmployeeDbContextModelSnapshot : ModelSnapshot
                 b.Property<string>("OtherName")
                     .HasColumnType("text");
 
-                b.Property<int>("Role")
-                    .HasColumnType("integer");
+                b.Property<string>("Role")
+                    .IsRequired()
+                    .HasColumnType("text");
 
-                b.Property<int>("Team")
-                    .HasColumnType("integer");
+                b.Property<string>("Team")
+                    .IsRequired()
+                    .HasColumnType("text");
 
                 b.Property<DateTime?>("UpdatedAt")
                     .HasColumnType("timestamp with time zone");
 
-                b.Property<int>("WorkShift")
-                    .HasColumnType("integer");
+                b.Property<string>("WorkShift")
+                    .IsRequired()
+                    .HasColumnType("text");
 
                 b.HasKey("Id");
 
