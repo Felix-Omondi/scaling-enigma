@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 using scaling_enigma.Data;
+using scaling_enigma.Interfaces;
+using scaling_enigma.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,12 +20,15 @@ builder.Services.AddDbContext<EmployeeDbContext>(options =>
     });
 });
 
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
