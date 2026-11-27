@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:11.0-alpine
+FROM mcr.microsoft.com/dotnet/sdk:11.0-alpine AS build
 WORKDIR /src
 COPY . /src/
 RUN dotnet publish "scaling-enigma.csproj" -o /publish
